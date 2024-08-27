@@ -40,9 +40,7 @@ jobs:
     container:
       image: swift:${{ matrix.tag }}
     steps:
-      - run: |
-          which docker || true
-          docker --version || true
+      - run: node --version || true
       - uses: actions/checkout@v4
       - run: swift test -c release -Xswiftc -enable-testing
 
